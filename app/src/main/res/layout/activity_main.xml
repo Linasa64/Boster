@@ -6,13 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/saisir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saisir"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="512dp" />
+
+    <Button
+        android:id="@+id/historique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/historique"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="569dp" />
+
+    <Button
+        android:id="@+id/pollution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pollution"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="627dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="98dp"
+        android:layout_height="77dp"
+        app:srcCompat="@drawable/voiture"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="182dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="99dp"
+        android:layout_height="77dp"
+        app:srcCompat="@drawable/moto"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="259dp" />
+
     <TextView
-        android:layout_width="26dp"
-        android:layout_height="18dp"
-        android:text="zizi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduction"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="118dp" />
+
+    <TextView
+        android:id="@+id/eqCo21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eqCo2"
+        tools:layout_editor_absoluteX="270dp"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <TextView
+        android:id="@+id/eqCo22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eqCo2"
+        tools:layout_editor_absoluteX="268dp"
+        tools:layout_editor_absoluteY="279dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

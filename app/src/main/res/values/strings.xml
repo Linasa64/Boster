@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Boster</string>
+    <string name="introduction">J\'ai évité...</string>
+    <string name="eqCo2">eq. CO2</string>
+    <string name="saisir">Saisir</string>
+    <string name="historique">Historique</string>
+    <string name="pollution">Pollution</string>
 </resources>

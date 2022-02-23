@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@+id/historique"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        android:onClick="onClickSaisie"
+        android:onClick="onClickSaisieB"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -27,6 +27,7 @@
         app:layout_constraintBottom_toTopOf="@+id/pollution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        android:onClick="onClickHistoriqueB"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button

@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_main.xml" value="0.25" />
+=======
+        <entry key="..\:/DOSSIER_WINDOWS/IMPORTANT/IUT_PaulSABATIER/COURS/Boster/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

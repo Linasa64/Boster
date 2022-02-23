@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Boster">
         <activity
+            android:name=".Consulter"
+            android:exported="true" />
+        <activity
+            android:name=".Historique"
+            android:exported="true" />
+        <activity
             android:name=".Saisie"
             android:exported="true" />
         <activity

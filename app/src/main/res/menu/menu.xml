@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Saisir" android:title="@string/Saisir" />
+    <item android:id="@+id/Historique" android:title="@string/Historique" />
+    <item android:id="@+id/Pollution" android:title="@string/Pollution" />
+    <item android:id="@+id/Quitter" android:title="@string/Quitter" />
+
+    <item
+        android:id="@+id/Accueil"
+        android:title="@string/Accueil"
+        app:showAsAction="always"/>
+</menu>

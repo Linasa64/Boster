@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< Updated upstream
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_consulter.xml" value="0.3625" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_historique.xml" value="0.3625" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_main.xml" value="0.25" />
-=======
-        <entry key="..\:/DOSSIER_WINDOWS/IMPORTANT/IUT_PaulSABATIER/COURS/Boster/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
->>>>>>> Stashed changes
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_saisie.xml" value="0.25" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/menu.xml" value="0.25" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/saisie.xml" value="0.25" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/toolbar.xml" value="0.2359375" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/menu/menu.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -10,64 +10,86 @@
         android:id="@+id/saisir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/saisir"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="512dp" />
+        android:layout_marginBottom="16dp"
+        android:text="@string/Saisir"
+        app:layout_constraintBottom_toTopOf="@+id/historique"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:onClick="onClickSaisie"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/historique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/historique"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="569dp" />
+        android:layout_marginBottom="16dp"
+        android:text="@string/Historique"
+        app:layout_constraintBottom_toTopOf="@+id/pollution"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/pollution"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pollution"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="627dp" />
+        android:layout_marginBottom="64dp"
+        android:text="@string/Pollution"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="98dp"
         android:layout_height="77dp"
-        app:srcCompat="@drawable/voiture"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="182dp" />
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/voiture" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="99dp"
         android:layout_height="77dp"
-        app:srcCompat="@drawable/moto"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="259dp" />
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/moto" />
 
     <TextView
         android:id="@+id/introduction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="@string/introduction"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="118dp" />
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/eqCo21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="166dp"
         android:text="@string/eqCo2"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="222dp" />
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/eqCo22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="70dp"
         android:text="@string/eqCo2"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="279dp" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/eqCo21" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,18 @@
 <resources>
+
+    //Texte menu déroulant
+    <string name="Accueil">Accueil</string>
+    <string name="Saisir">Saisir</string>
+    <string name="Historique">Historique</string>
+    <string name="Pollution">Pollution</string>
+    <string name="Quitter">Quitter</string>
+
+
+    //Texte page accueil
+
     <string name="app_name">Boster</string>
     <string name="introduction">J\'ai évité...</string>
-    <string name="eqCo2">eq. CO2</string>
-    <string name="saisir">Saisir</string>
-    <string name="historique">Historique</string>
-    <string name="pollution">Pollution</string>
+    <string name="eqCo2">eq. CO2 non émis !</string>
+
+
 </resources>

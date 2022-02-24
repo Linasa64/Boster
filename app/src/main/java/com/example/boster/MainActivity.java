@@ -3,13 +3,17 @@ package com.example.boster;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +22,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //DATABASE
+        ClientDbHelper bdd = new ClientDbHelper(this);
+        SQLiteDatabase db = bdd.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("id", 1);
+        values.put("mode", "velo");
+        values.put("distance", 10);
+        values.put("ville", "lourdios");
+        //values.put("date", );
+
+        db.insert("Deplacements", null, values);
+
+        //db.close();
     }
 
     @Override

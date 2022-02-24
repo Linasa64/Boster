@@ -14,5 +14,14 @@
     <string name="introduction">J\'ai évité...</string>
     <string name="eqCo2">eq. CO2 non émis !</string>
 
+    //Page saisie
+
+    <string name="DefRadios">Vous avez effectué le trajet à : </string>
+    <string name="APied">A pied</string>
+    <string name="AVelo">A velo</string>
+    <string name="Distance">Distance parcourue</string>
+    <string name="Ville">Ville</string>
+    <string name="Valider">Valider</string>
+
 
 </resources>

@@ -17,23 +17,29 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
+//    static ClientDbHelper bdd;
+//
+//    static SQLiteDatabase db = bdd.getWritableDatabase();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //DATABASE
-        ClientDbHelper bdd = new ClientDbHelper(this);
+        ClientDbHelper bdd;
+        bdd = new ClientDbHelper(this);
         SQLiteDatabase db = bdd.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put("id", 1);
-        values.put("mode", "velo");
-        values.put("distance", 10);
-        values.put("ville", "lourdios");
+        //DATABASE
+
+
+//        ContentValues values = new ContentValues();
+//        values.put("id", 1);
+//        values.put("mode", "velo");
+//        values.put("distance", 10);
+//        values.put("ville", "lourdios");
         //values.put("date", );
 
-        db.insert("Deplacements", null, values);
+        //db.insert("Deplacements", null, values);
 
         //db.close();
     }

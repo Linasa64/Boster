@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioButton_Velo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -47,22 +47,31 @@
         android:inputType="textPersonName"
         android:text="@string/Distance"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream
         app:layout_constraintTop_toBottomOf="@+id/radioButton_Pied" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/mode" />
+
+    <EditText
+        android:id="@+id/ville"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+>>>>>>> Stashed changes
         android:layout_marginStart="64dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/Ville"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/distance" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -70,12 +79,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        android:onClick="onClickValider"
+        app:layout_constraintTop_toBottomOf="@+id/ville" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
+=======
+        android:layout_marginTop="32dp"
+        android:text="@string/DefRadios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TitreSaisie" />
+
+    <RadioGroup
+        android:id="@+id/mode"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+>>>>>>> Stashed changes
         android:layout_marginStart="64dp"
         android:layout_marginBottom="10dp"
         android:text="@string/DefRadios"

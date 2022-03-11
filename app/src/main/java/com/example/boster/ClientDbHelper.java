@@ -9,7 +9,7 @@ public class ClientDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "maBD.db";
 
-    public final String SQL_CREATE = "CREATE TABLE Deplacements (id INTEGER PRIMARY KEY, mode TEXT, distance INT, ville TEXT, date DATE);";
+    public final String SQL_CREATE = "CREATE TABLE IF NOT EXISTS Deplacements (id INTEGER PRIMARY KEY, mode TEXT, distance INT, ville TEXT, date DATE);";
     final String SQL_DELETE = "DROP TABLE IF EXISTS Deplacements;";
 
     public ClientDbHelper (Context context) {

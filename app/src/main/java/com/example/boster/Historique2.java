@@ -45,9 +45,6 @@ public class Historique2 extends AppCompatActivity {
     @SuppressLint("Range")
     public List<Deplacement> getContentDB(){
 
-        //int numRows = (int) DatabaseUtils.queryNumEntries(db, "Deplacements");
-        //int cursorRows = 0;
-
         List<Deplacement> resultList = new ArrayList<Deplacement>();
 
         String[] col = {"mode", "date", "ville", "distance"};
@@ -65,18 +62,4 @@ public class Historique2 extends AppCompatActivity {
         return resultList;
     }
 
-/*    private List<Deplacement> getListData(){
-        List<Deplacement> list = new ArrayList<Deplacement>();
-        Deplacement a = new Deplacement("16/03/22", "10", "0.0235");
-        Deplacement b = new Deplacement("17/03/22", "11", "0.0236");
-        Deplacement c = new Deplacement("18/03/22", "12", "0.0237");
-        Deplacement d = new Deplacement("19/03/22", "13", "0.0238");
-
-        list.add(a);
-        list.add(b);
-        list.add(c);
-        list.add(d);
-
-        return list;
-    }*/
 }

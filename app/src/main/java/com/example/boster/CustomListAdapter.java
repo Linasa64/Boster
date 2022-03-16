@@ -58,24 +58,14 @@ public class CustomListAdapter  extends BaseAdapter {
         holder.distanceView.setText(deplacement.getDistance() + " km parcourus");
         holder.co2View.setText(deplacement.getCo2() + " kg évités");
 
-        //int imageId = this.getMipmapResIdByName(deplacement.getFlagName());
-
-        if(deplacement.getMode()=="Apied"){
+        String mode = deplacement.getMode();
+        if(mode=="Apied"){
             holder.modeTransportView.setImageResource(R.drawable.voiture);
         }else{
             holder.modeTransportView.setImageResource(R.drawable.moto);
         }
 
         return convertView;
-    }
-
-    // Find Image ID corresponding to the name of the image (in the directory mipmap).
-    public int getMipmapResIdByName(String resName)  {
-        String pkgName = context.getPackageName();
-        // Return 0 if not found.
-        int resID = context.getResources().getIdentifier(resName , "mipmap", pkgName);
-        Log.i("CustomListView", "Res Name: "+ resName+"==> Res ID = "+ resID);
-        return resID;
     }
 
     static class ViewHolder {

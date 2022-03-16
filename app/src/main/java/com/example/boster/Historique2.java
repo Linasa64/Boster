@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -51,7 +50,7 @@ public class Historique2 extends AppCompatActivity {
 
         List<Deplacement> resultList = new ArrayList<Deplacement>();
 
-        String[] col = {"distance", "mode", "ville"};
+        String[] col = {"mode", "date", "ville", "distance"};
         String [] select = {};
 
         Cursor cursor = db.query("Deplacements", col, "", select, null, null, "id DESC");
@@ -59,7 +58,7 @@ public class Historique2 extends AppCompatActivity {
         if(cursor.moveToFirst()){
             String[] columnNames = cursor.getColumnNames();
             do{
-                Deplacement d = new Deplacement(cursor.getString(cursor.getColumnIndex("distance")), cursor.getString(cursor.getColumnIndex("mode")), cursor.getString(cursor.getColumnIndex("ville")));
+                Deplacement d = new Deplacement(cursor.getString(cursor.getColumnIndex("mode")), cursor.getString(cursor.getColumnIndex("date")), cursor.getString(cursor.getColumnIndex("ville")), cursor.getString(cursor.getColumnIndex("distance")), "xxxx");
                 resultList.add(d);
             }while (cursor.moveToNext());
         }

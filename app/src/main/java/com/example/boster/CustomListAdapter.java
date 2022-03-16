@@ -44,6 +44,7 @@ public class CustomListAdapter  extends BaseAdapter {
             holder = new ViewHolder();
             holder.modeTransportView = (ImageView) convertView.findViewById(R.id.iconeTransport);
             holder.dateView = (TextView) convertView.findViewById(R.id.dateActivity);
+            holder.villeView = (TextView) convertView.findViewById(R.id.villeActivity);
             holder.distanceView = (TextView) convertView.findViewById(R.id.distanceActivity);
             holder.co2View = (TextView) convertView.findViewById(R.id.co2Activity);
             convertView.setTag(holder);
@@ -52,13 +53,18 @@ public class CustomListAdapter  extends BaseAdapter {
         }
 
         Deplacement deplacement = this.listData.get(position);
-        holder.dateView.setText(deplacement.getDate());
-        holder.distanceView.setText(deplacement.getDistance());
-        holder.co2View.setText(deplacement.getCo2());
+        holder.dateView.setText(deplacement.getMode());
+        holder.villeView.setText(deplacement.getVille());
+        holder.distanceView.setText(deplacement.getDistance() + " km parcourus");
+        holder.co2View.setText(deplacement.getCo2() + " kg évités");
 
         //int imageId = this.getMipmapResIdByName(deplacement.getFlagName());
 
-        holder.modeTransportView.setImageResource(R.drawable.voiture);
+        if(deplacement.getMode()=="Apied"){
+            holder.modeTransportView.setImageResource(R.drawable.voiture);
+        }else{
+            holder.modeTransportView.setImageResource(R.drawable.moto);
+        }
 
         return convertView;
     }
@@ -75,6 +81,7 @@ public class CustomListAdapter  extends BaseAdapter {
     static class ViewHolder {
         ImageView modeTransportView;
         TextView dateView;
+        TextView villeView;
         TextView distanceView;
         TextView co2View;
     }

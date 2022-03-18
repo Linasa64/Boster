@@ -21,6 +21,9 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class Saisie extends AppCompatActivity {
 
     SQLiteDatabase db;
@@ -81,7 +84,9 @@ public class Saisie extends AppCompatActivity {
         values.put("mode", mode);
         values.put("distance", distance);
         values.put("ville", ville);
-        //values.put("date", );
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy");
+        values.put("date", dateFormat.format(Calendar.getInstance().getTime()));
 
         db.insert("Deplacements", null, values);
     }

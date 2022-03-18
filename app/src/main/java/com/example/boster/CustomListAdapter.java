@@ -61,7 +61,7 @@ public class CustomListAdapter  extends BaseAdapter {
         String mode = deplacement.getMode();
         if(mode=="Apied"){
             holder.modeTransportView.setImageResource(R.drawable.voiture);
-        }else{
+        }else {
             holder.modeTransportView.setImageResource(R.drawable.moto);
         }
 

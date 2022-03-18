@@ -3,17 +3,22 @@ package com.example.boster;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,13 +26,21 @@ public class MainActivity extends AppCompatActivity {
 //
 //    static SQLiteDatabase db = bdd.getWritableDatabase();
 
+    SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ClientDbHelper bdd;
         bdd = new ClientDbHelper(this);
-        SQLiteDatabase db = bdd.getWritableDatabase();
+
+        db = bdd.getWritableDatabase();
+
+        final TextView qteCO2Voiture = (TextView) findViewById(R.id.nbVoiture);
+        qteCO2Voiture.setText(getCO2Diesel(getContentDBIntoCO2()));
+        final TextView qteCO2Moto = (TextView) findViewById(R.id.nbMoto);
+        qteCO2Moto.setText(getCO2Essence(getContentDBIntoCO2()));
 
         //DATABASE
 
@@ -94,6 +107,34 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressLint("Range")
+    public int getContentDBIntoCO2(){
+
+        int resultBD = 0;
+
+        String[] col = {"distance"};
+        String [] select = {};
+
+        Cursor cursor = db.query("Deplacements", col, "", select, null, null, "id DESC");
+
+        if(cursor.moveToFirst()) {
+            String[] columnNames = cursor.getColumnNames();
+            do {
+                resultBD += Integer.parseInt(cursor.getString(cursor.getColumnIndex("distance")));
+            } while (cursor.moveToNext());
+        }
+
+        return resultBD;
+    }
+
+    public String getCO2Diesel(int distance){
+        return String.valueOf(String.format("%.3f", distance*0.132));
+    }
+
+    public String getCO2Essence(int distance){
+        return String.valueOf(String.format("%.3f", distance*0.120));
     }
 
 }

@@ -93,4 +93,22 @@
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/eqCo21" />
 
+    <TextView
+        android:id="@+id/nbVoiture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/eqCo21"
+        app:layout_constraintTop_toTopOf="@+id/eqCo21" />
+
+    <TextView
+        android:id="@+id/nbMoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/eqCo22"
+        app:layout_constraintTop_toTopOf="@+id/eqCo22" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

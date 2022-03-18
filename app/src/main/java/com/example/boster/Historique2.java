@@ -1,11 +1,16 @@
 package com.example.boster;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -40,6 +45,64 @@ public class Historique2 extends AppCompatActivity {
                 Toast.makeText(Historique2.this, deplacement.toString(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public void onClickMenu(){
+        Intent intent = new Intent(Historique2.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickSaisie(){
+        Intent intent = new Intent(Historique2.this, Saisie.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickHistorique(){
+        Intent intent = new Intent(Historique2.this, Historique.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickSaisieB(View v){
+        Intent intent = new Intent(Historique2.this, Saisie.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickHistoriqueB(View v){
+        Intent intent = new Intent(Historique2.this, Historique.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.Accueil:
+                onClickMenu();
+                break;
+            case R.id.Saisir:
+                onClickSaisie();
+                break;
+            case R.id.Historique:
+                Toast.makeText(this, "Déjà sur la page de l'historique", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Quitter:
+                System.exit(0);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @SuppressLint("Range")

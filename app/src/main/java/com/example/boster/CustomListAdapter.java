@@ -59,7 +59,7 @@ public class CustomListAdapter  extends BaseAdapter {
         holder.co2View.setText(deplacement.getCo2() + " kg évités");
 
         String mode = deplacement.getMode();
-        if(mode=="Apied"){
+        if(mode.equals("Apied")){
             holder.modeTransportView.setImageResource(R.drawable.voiture);
         }else {
             holder.modeTransportView.setImageResource(R.drawable.moto);

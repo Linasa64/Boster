@@ -5,8 +5,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,28 +35,24 @@ public class Pollution extends AppCompatActivity {
 
     private void getData(){
 
-        Call<List<Data>> call = jsonPlaceHolderApi.getData("bc68f9b0077bd7d27b6b43d4346033b8c146bb42");
+        Call<APIResponse> call = jsonPlaceHolderApi.data();
 
-        call.enqueue(new Callback<List<Data>>() {
+        call.enqueue(new Callback<APIResponse>() {
             @Override
-            public void onResponse(Call<List<Data>> call, Response<List<Data>> response) {
+            public void onResponse(Call<APIResponse> call, Response<APIResponse> response) {
                 if(!response.isSuccessful()){
-                    textViewResult.setText(("Code :" + response.code()));
+                    textViewResult.setText(("Error response :" + response.code()));
                     return;
                 }
 
-                List<Data> datas = response.body();
-                for(Data data : datas){
-                    String content = "";
-                    //content += "AQI : " + data.getAqi();
-                    //content += "IDX : " + data.getIdx();
-                    content += "Status : " + data.status();
-                    textViewResult.append(content);
-                }
+                APIResponse data = response.body();
+                String content = "";
+                content += "AQI : " + data.data().aqi();
+                textViewResult.append(content);
             }
 
             @Override
-            public void onFailure(Call<List<Data>> call, Throwable t) {
+            public void onFailure(Call<APIResponse> call, Throwable t) {
                 textViewResult.setText((t.getMessage()));
             }
         });

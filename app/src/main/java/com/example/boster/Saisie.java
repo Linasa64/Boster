@@ -9,14 +9,18 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
@@ -28,6 +32,27 @@ public class Saisie extends AppCompatActivity {
 
     SQLiteDatabase db;
 
+    TextView distanceTV;
+    TextView villeTV;
+    RadioGroup rbg;
+    Button validerB;
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            checkFieldsForEmptyValues();
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +60,23 @@ public class Saisie extends AppCompatActivity {
         ClientDbHelper bdd;
         bdd = new ClientDbHelper(this);
         db = bdd.getWritableDatabase();
+
+        distanceTV = (TextView) findViewById(R.id.distance);
+        villeTV = (TextView) findViewById(R.id.ville);
+        rbg = (RadioGroup) findViewById(R.id.mode);
+        validerB = (Button) findViewById(R.id.valider);
+        validerB.setEnabled(false);
+
+        distanceTV.addTextChangedListener(textWatcher);
+        villeTV.addTextChangedListener(textWatcher);
+
+        rbg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                checkFieldsForEmptyValues();
+            }
+        });
     }
 
     protected void onDestroy(Bundle savedInstanceState){
@@ -73,7 +115,7 @@ public class Saisie extends AppCompatActivity {
     }
 
     public void onClickHistoriqueB(View v){
-        Intent intent = new Intent(Saisie.this, Historique.class);
+        Intent intent = new Intent(Saisie.this, Historique2.class);
         startActivity(intent);
         finish();
     }
@@ -120,10 +162,22 @@ public class Saisie extends AppCompatActivity {
 
         Log.v("Test", ville);
 
-        if(mode != null && distance !=0 && ville != null){
-            ajouterDB(mode, distance, ville);
-            Toast.makeText(this, "Trajet enregistré", Toast.LENGTH_SHORT).show();
-            finish();
+        ajouterDB(mode, distance, ville);
+        Toast.makeText(this, "Trajet enregistré", Toast.LENGTH_SHORT).show();
+        finish();
+
+    }
+
+    private void checkFieldsForEmptyValues(){
+        String s1 = distanceTV.getText().toString().trim();
+        String s2 = villeTV.getText().toString().trim();
+        int s3 = rbg.getCheckedRadioButtonId();
+
+        if(!s1.isEmpty()&&!s2.isEmpty()&&(s3==R.id.radioButton_Pied||s3==R.id.radioButton_Velo)){
+            validerB.setEnabled(true);
+        }
+        else{
+            validerB.setEnabled(false);
         }
     }
 

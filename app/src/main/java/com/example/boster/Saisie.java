@@ -93,10 +93,10 @@ public class Saisie extends AppCompatActivity {
 
     public void onClickValider(View v){
 
-        String mode = "Envoiture";
+        String mode = null;
 
         int distance;
-        String ville;
+        String ville = null;
 
         //boolean checked = ((RadioButton) v).isChecked();
 
@@ -105,14 +105,14 @@ public class Saisie extends AppCompatActivity {
 
         switch(checkedRb) {
             case R.id.radioButton_Pied:
-                mode = "Apied";
+                mode = "Marche";
                 break;
             case R.id.radioButton_Velo:
-                mode = "Avelo";
+                mode = "Vélo";
                 break;
         }
 
-        Log.v("Test", mode);
+        //Log.v("Test", mode);
 
         distance = Integer.parseInt(((EditText) findViewById(R.id.distance)).getText().toString());
 
@@ -120,7 +120,11 @@ public class Saisie extends AppCompatActivity {
 
         Log.v("Test", ville);
 
-        ajouterDB(mode, distance, ville);
+        if(mode != null && distance !=0 && ville != null){
+            ajouterDB(mode, distance, ville);
+            Toast.makeText(this, "Trajet enregistré", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
     @Override

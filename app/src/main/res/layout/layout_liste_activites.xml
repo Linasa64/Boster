@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iconeTransport"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/voiture" />
+
+    <TextView
+        android:id="@+id/dateActivity"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/villeActivity"
+        app:layout_constraintEnd_toStartOf="@+id/distanceActivity"
+        app:layout_constraintStart_toEndOf="@+id/iconeTransport"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/distanceActivity"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/co2Activity"
+        app:layout_constraintStart_toEndOf="@+id/iconeTransport"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/co2Activity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iconeTransport"
+        app:layout_constraintTop_toBottomOf="@+id/distanceActivity" />
+
+    <TextView
+        android:id="@+id/villeActivity"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/co2Activity"
+        app:layout_constraintStart_toEndOf="@+id/iconeTransport"
+        app:layout_constraintTop_toBottomOf="@+id/dateActivity" />
+</androidx.constraintlayout.widget.ConstraintLayout>

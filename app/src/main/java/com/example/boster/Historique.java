@@ -3,20 +3,70 @@ package com.example.boster;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class Historique extends AppCompatActivity {
+
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historique);
+
+        ClientDbHelper bdd;
+        bdd = new ClientDbHelper(this);
+        db = bdd.getWritableDatabase();
+
+        ListView liste = (ListView) findViewById(R.id.listView);
+
+        //String[] valeurs = {getContentDB(), "Mode", "Ville"};
+        String[] valeurs = getContentDB();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, valeurs);
+
+        liste.setAdapter(adapter);
+
+    }
+
+    @SuppressLint("Range")
+    public String[] getContentDB(){
+
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, "Deplacements");
+        int cursorRows = 0;
+
+        String [] result = new String[numRows];
+
+        String[] col = {"distance", "mode", "ville"};
+        String [] select = {};
+
+        Cursor cursor = db.query("Deplacements", col, "", select, null, null, "id DESC");
+
+        if(cursor.moveToFirst()){
+            String[] columnNames = cursor.getColumnNames();
+            do{
+                for(String name : columnNames){
+                    if(result[cursorRows]==null){
+                        result[cursorRows]="";
+                    }
+                    result[cursorRows] = result[cursorRows]+String.format("%s : %s\n", name, cursor.getString(cursor.getColumnIndex(name)));
+                }
+                cursorRows++;
+            }while (cursor.moveToNext());
+        }
+        return result;
     }
 
     @Override

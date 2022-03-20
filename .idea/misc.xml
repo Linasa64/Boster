@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout-land/activity_saisie.xml" value="0.3846846846846847" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_consulter.xml" value="0.3625" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_historique.xml" value="0.264" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_historique2.xml" value="0.3625" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/activity_saisie.xml" value="0.25" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/layout_liste_activites.xml" value="0.264" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/menu.xml" value="0.25" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/saisie.xml" value="0.25" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/layout/toolbar.xml" value="0.2359375" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/Boster/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/linab/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.234375" />
       </map>
     </option>
   </component>

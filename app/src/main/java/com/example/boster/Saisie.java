@@ -2,28 +2,24 @@ package com.example.boster;
 
 //import static com.example.boster.MainActivity.db;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -146,11 +142,11 @@ public class Saisie extends AppCompatActivity {
         int checkedRb = rbg.getCheckedRadioButtonId();
 
         switch(checkedRb) {
+            case R.id.radioButton_Velo:
+                mode = "Velo";
+                break;
             case R.id.radioButton_Pied:
                 mode = "Marche";
-                break;
-            case R.id.radioButton_Velo:
-                mode = "Vélo";
                 break;
         }
 
@@ -160,10 +156,8 @@ public class Saisie extends AppCompatActivity {
 
         ville = ((EditText) findViewById(R.id.ville)).getText().toString();
 
-        Log.v("Test", ville);
-
         ajouterDB(mode, distance, ville);
-        Toast.makeText(this, "Trajet enregistré", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.trajetEnregistré, Toast.LENGTH_SHORT).show();
         finish();
 
     }
@@ -173,7 +167,7 @@ public class Saisie extends AppCompatActivity {
         String s2 = villeTV.getText().toString().trim();
         int s3 = rbg.getCheckedRadioButtonId();
 
-        if(!s1.isEmpty()&&!s2.isEmpty()&&(s3==R.id.radioButton_Pied||s3==R.id.radioButton_Velo)){
+        if(!s1.isEmpty()&&!s2.isEmpty()&&(s3==R.id.radioButton_Velo ||s3==R.id.radioButton_Pied)){
             validerB.setEnabled(true);
         }
         else{
@@ -188,7 +182,7 @@ public class Saisie extends AppCompatActivity {
                 onClickMenu();
                 break;
             case R.id.Saisir:
-                Toast.makeText(this, "Déjà sur la page de saisie", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.toastSaisir, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Historique:
                 onClickHistorique();

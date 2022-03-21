@@ -1,13 +1,13 @@
 package com.example.boster;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.List;
 
 public class CustomListAdapter  extends BaseAdapter {
@@ -53,16 +53,16 @@ public class CustomListAdapter  extends BaseAdapter {
         }
 
         Deplacement deplacement = this.listData.get(position);
-        holder.dateView.setText(deplacement.getMode());
+        holder.dateView.setText(deplacement.getDate());
         holder.villeView.setText(deplacement.getVille());
-        holder.distanceView.setText(deplacement.getDistance() + " km parcourus");
+        holder.distanceView.setText(deplacement.getDistance() + " kmParcourus");
         holder.co2View.setText(deplacement.getCo2() + " kg évités");
 
         String mode = deplacement.getMode();
-        if(mode.equals("Apied")){
-            holder.modeTransportView.setImageResource(R.drawable.voiture);
+        if(mode.equals("Marche")){
+            holder.modeTransportView.setImageResource(R.drawable.marche);
         }else {
-            holder.modeTransportView.setImageResource(R.drawable.moto);
+            holder.modeTransportView.setImageResource(R.drawable.velo);
         }
 
         return convertView;

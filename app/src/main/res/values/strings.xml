@@ -7,6 +7,10 @@
     <string name="Pollution">Pollution</string>
     <string name="Quitter">Quitter</string>
 
+    <string name="toastAccueil">Déjà sur la page d\'accueil</string>
+    <string name="toastSaisir">Déjà sur la page de saisie</string>
+    <string name="toastHistorique">Déjà sur la page d\'historique</string>
+    <string name="toastPollution">Déjà sur la page de pollution</string>
 
     //Texte page accueil
 
@@ -22,6 +26,21 @@
     <string name="Distance">Distance parcourue</string>
     <string name="Ville">Ville</string>
     <string name="Valider">Valider</string>
+    <string name="modeMarche">Marche</string>
+    <string name="modeVelo">Vélo</string>
+    <string name="trajetEnregistré">Trajet enregistré</string>
 
+    //Page choix ville
+    <string name="libelleChoix">Veuillez saisir une ville, puis sélectionner la station correspondante</string>
+
+    //Page Pollution
+    <string name="selectionVille">Commencez par sélectionner une ville</string>
+    <string name="selectionner">Sélectionner</string>
+    <string name="niveauPollution">Niveau de pollution :  </string>
+    <string name="aqi">  aqi</string>
+
+    //Custom list adapter
+    <string name="kmParcourus"> km parcourus</string>
+    <string name="kgEvites"> kg évités</string>
 
 </resources>

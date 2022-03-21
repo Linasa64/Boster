@@ -1,8 +1,5 @@
 package com.example.boster;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,6 +12,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +94,7 @@ public class Historique2 extends AppCompatActivity {
                 onClickSaisie();
                 break;
             case R.id.Historique:
-                Toast.makeText(this, "Déjà sur la page de l'historique", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.toastHistorique, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Quitter:
                 System.exit(0);
@@ -118,7 +118,9 @@ public class Historique2 extends AppCompatActivity {
         if(cursor.moveToFirst()){
             String[] columnNames = cursor.getColumnNames();
             do{
-                Deplacement d = new Deplacement(cursor.getString(cursor.getColumnIndex("mode")), cursor.getString(cursor.getColumnIndex("date")), cursor.getString(cursor.getColumnIndex("ville")), cursor.getString(cursor.getColumnIndex("distance")), "xxxx");
+                Deplacement d = new Deplacement(cursor.getString(cursor.getColumnIndex("mode")), cursor.getString(cursor.getColumnIndex("date")), cursor.getString(cursor.getColumnIndex("ville")), cursor.getString(cursor.getColumnIndex("distance")), "");
+                Float kgCo2 = Float.parseFloat(d.getDistance())*0.126F;
+                d.setCo2(String.format("%.02f", kgCo2));
                 resultList.add(d);
             }while (cursor.moveToNext());
         }

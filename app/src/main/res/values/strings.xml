@@ -23,5 +23,9 @@
     <string name="Ville">Ville</string>
     <string name="Valider">Valider</string>
 
+    //Page choix ville
+    <string name="libelleChoix">Veuillez saisir une ville, puis sélectionner la station correspondante</string>
+
+
 
 </resources>

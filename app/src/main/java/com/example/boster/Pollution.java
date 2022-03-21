@@ -3,8 +3,8 @@ package com.example.boster;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +18,7 @@ public class Pollution extends AppCompatActivity {
 
     private TextView textViewPollution;
     private TextView textViewNomVille;
-    private TextView textViewCommentaire;
+    private ImageView niveauPollutionImg;
 
     String idStation;
 
@@ -42,7 +42,7 @@ public class Pollution extends AppCompatActivity {
 
         textViewPollution = findViewById(R.id.results);
         textViewNomVille = findViewById(R.id.nomVilleSelectionnee);
-        textViewCommentaire = findViewById(R.id.commentairePollution);
+        niveauPollutionImg = findViewById(R.id.niveauPollutionImg);
     }
 
     public void onClickValider(View v){
@@ -58,7 +58,6 @@ public class Pollution extends AppCompatActivity {
             if(data != null){
                 idStation = ""+ data.getStringExtra("idStation");
                 nomVille = "" + data.getStringExtra("nomStation");
-                Toast.makeText(this, "caca : "+data.getStringExtra("nomStation"), Toast.LENGTH_SHORT).show();
                 getData();
             }
         }
@@ -80,19 +79,25 @@ public class Pollution extends AppCompatActivity {
                 String content = "";
                 content += data.data().aqi();
                 pollution = data.data().aqi();
-                textViewPollution.setText("Niveau de pollution :  " + content + "  aqi");
+                textViewPollution.setText("Aqi : " + content);
                 textViewNomVille.setText(nomVille);
                 content ="";
                 nomVille="";
 
                 if(pollution<50){
-                    textViewCommentaire.setText("La qualité de l'air est bonne");
+                    niveauPollutionImg.setImageResource(R.drawable.level1);
                 }
                 else if(pollution<100){
-                    textViewCommentaire.setText("La qualité de l'air est modérément bonne");
+                    niveauPollutionImg.setImageResource(R.drawable.level2);
                 }
                 else if(pollution<150){
-                    textViewCommentaire.setText("La qualité de l'air est mauvaise pour les personnes sensibles");
+                    niveauPollutionImg.setImageResource(R.drawable.level3);
+                }
+                else if(pollution<200){
+                    niveauPollutionImg.setImageResource(R.drawable.level4);
+                }
+                else{
+                    niveauPollutionImg.setImageResource(R.drawable.level5);
                 }
             }
 

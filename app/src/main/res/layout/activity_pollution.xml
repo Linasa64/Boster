@@ -14,8 +14,8 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:onClick="onClickValider"
-        android:text="Sélectionner"
+        android:text="@string/selectionner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titreSelectionnerVille" />
@@ -41,7 +41,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:text="Commencez par sélectionner une ville"
+        android:text="@string/selectionVille"
         android:textAlignment="center"
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,17 +63,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/validerVille" />
 
-    <TextView
-        android:id="@+id/commentairePollution"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
-        android:textAlignment="center"
+    <ImageView
+        android:id="@+id/niveauPollutionImg"
+        android:layout_width="266dp"
+        android:layout_height="199dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/results" />
+        app:srcCompat="@drawable/aqi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

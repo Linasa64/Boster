@@ -1,8 +1,5 @@
 package com.example.boster;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,6 +13,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Historique extends AppCompatActivity {
 
@@ -116,7 +116,7 @@ public class Historique extends AppCompatActivity {
                 onClickSaisie();
                 break;
             case R.id.Historique:
-                Toast.makeText(this, "Déjà sur la page d'historique'", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.toastHistorique, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Quitter:
                 System.exit(0);

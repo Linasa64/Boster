@@ -75,13 +75,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <RadioButton
-            android:id="@+id/radioButton_Pied"
+            android:id="@+id/radioButton_Velo"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:text="@string/AVelo" />
 
         <RadioButton
-            android:id="@+id/radioButton_Velo"
+            android:id="@+id/radioButton_Pied"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/APied" />

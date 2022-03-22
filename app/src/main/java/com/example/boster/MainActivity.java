@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickHistorique(){
-        Intent intent = new Intent(MainActivity.this, Historique.class);
+        Intent intent = new Intent(MainActivity.this, Historique2.class);
         startActivity(intent);
         //finish();
     }

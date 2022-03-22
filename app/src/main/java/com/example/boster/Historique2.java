@@ -67,7 +67,7 @@ public class Historique2 extends AppCompatActivity {
     }
 
     public void onClickHistorique(){
-        Intent intent = new Intent(Historique2.this, Historique.class);
+        Intent intent = new Intent(Historique2.this, Historique2.class);
         startActivity(intent);
         finish();
     }
@@ -79,7 +79,7 @@ public class Historique2 extends AppCompatActivity {
     }
 
     public void onClickHistoriqueB(View v){
-        Intent intent = new Intent(Historique2.this, Historique.class);
+        Intent intent = new Intent(Historique2.this, Historique2.class);
         startActivity(intent);
         finish();
     }

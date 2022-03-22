@@ -99,7 +99,7 @@ public class Saisie extends AppCompatActivity {
     }
 
     public void onClickHistorique(){
-        Intent intent = new Intent(Saisie.this, Historique.class);
+        Intent intent = new Intent(Saisie.this, Historique2.class);
         startActivity(intent);
         finish();
     }

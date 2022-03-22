@@ -2,10 +2,14 @@ package com.example.boster;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import retrofit2.Call;
@@ -43,6 +47,64 @@ public class Pollution extends AppCompatActivity {
         textViewPollution = findViewById(R.id.results);
         textViewNomVille = findViewById(R.id.nomVilleSelectionnee);
         niveauPollutionImg = findViewById(R.id.niveauPollutionImg);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflaterMenu = getMenuInflater();
+        inflaterMenu.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public void onClickMenu(){
+        Intent intent = new Intent(Pollution.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickSaisie(){
+        Intent intent = new Intent(Pollution.this, Saisie.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickHistorique(){
+        Intent intent = new Intent(Pollution.this, Historique2.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickSaisieB(View v){
+        Intent intent = new Intent(Pollution.this, Saisie.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void onClickHistoriqueB(View v){
+        Intent intent = new Intent(Pollution.this, Historique2.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()){
+            case R.id.Accueil:
+                onClickMenu();
+                break;
+            case R.id.Saisir:
+                onClickSaisie();
+                break;
+            case R.id.Historique:
+                onClickHistorique();
+                break;
+            case R.id.Quitter:
+                System.exit(0);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void onClickValider(View v){

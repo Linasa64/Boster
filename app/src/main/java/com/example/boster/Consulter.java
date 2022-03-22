@@ -1,15 +1,14 @@
 package com.example.boster;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Consulter extends AppCompatActivity {
 
@@ -39,7 +38,7 @@ public class Consulter extends AppCompatActivity {
     }
 
     public void onClickHistorique(){
-        Intent intent = new Intent(Consulter.this, Historique.class);
+        Intent intent = new Intent(Consulter.this, Historique2.class);
         startActivity(intent);
         finish();
     }
@@ -51,7 +50,7 @@ public class Consulter extends AppCompatActivity {
     }
 
     public void onClickHistoriqueB(View v){
-        Intent intent = new Intent(Consulter.this, Historique.class);
+        Intent intent = new Intent(Consulter.this, Historique2.class);
         startActivity(intent);
         finish();
     }

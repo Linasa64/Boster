@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boster</string>
+    <string name="Accueil">Home</string>
+    <string name="Saisir">Add new trip</string>
+    <string name="Historique">History</string>
+    <string name="Pollution">Pollution</string>
+    <string name="Quitter">Quit</string>
+    <string name="toastAccueil">Already on the home page</string>
+    <string name="toastSaisir">Already on the add page</string>
+    <string name="toastHistorique">Already on the history page</string>
+    <string name="toastPollution">Already on the pollution page</string>
+    <string name="introduction">I avoided...</string>
+    <string name="eqCo2">kg eq. CO2 not emitted!</string>
+    <string name="DefRadios">"You made the trip  : "</string>
+    <string name="APied">On foot</string>
+    <string name="AVelo">On bike</string>
+    <string name="Distance">Distance traveled</string>
+    <string name="Ville">City</string>
+    <string name="Valider">Confirm</string>
+    <string name="modeMarche">Walk</string>
+    <string name="modeVelo">Bike</string>
+    <string name="trajetEnregistré">Recorded trip</string>
+    <string name="libelleChoix">Please enter a city, then select the corresponding station</string>
+    <string name="selectionVille">Start by selecting a city</string>
+    <string name="selectionner">"Select "</string>
+    <string name="niveauPollution">"Pollution level:  "</string>
+    <string name="kmParcourus">" km travelled"</string>
+    <string name="kgEvites">" kg avoided"</string>
+</resources>

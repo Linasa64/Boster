@@ -46,21 +46,21 @@
         android:id="@+id/imageView"
         android:layout_width="98dp"
         android:layout_height="77dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="128dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/voiture" />
+        app:srcCompat="@drawable/diesel" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="99dp"
         android:layout_height="77dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="53dp"
         android:layout_marginTop="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/moto" />
+        app:srcCompat="@drawable/essence" />
 
     <TextView
         android:id="@+id/introduction"
@@ -78,9 +78,11 @@
         android:id="@+id/eqCo21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="166dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/eqCo2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,9 +90,11 @@
         android:id="@+id/eqCo22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/eqCo2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/eqCo21" />
 
@@ -98,7 +102,7 @@
         android:id="@+id/nbVoiture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="28dp"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/eqCo21"
         app:layout_constraintTop_toTopOf="@+id/eqCo21" />
@@ -107,7 +111,7 @@
         android:id="@+id/nbMoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="28dp"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/eqCo22"
         app:layout_constraintTop_toTopOf="@+id/eqCo22" />

@@ -55,7 +55,7 @@ public class CustomListAdapter  extends BaseAdapter {
         Deplacement deplacement = this.listData.get(position);
         holder.dateView.setText(deplacement.getDate());
         holder.villeView.setText(deplacement.getVille());
-        holder.distanceView.setText(deplacement.getDistance() + " kmParcourus");
+        holder.distanceView.setText(deplacement.getDistance() + " km");
         holder.co2View.setText(deplacement.getCo2() + " kg évités");
 
         String mode = deplacement.getMode();
